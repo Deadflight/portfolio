@@ -1,0 +1,136 @@
+/*************** Custom Properties ***************/
+:root{
+  --first-color: rgba(217, 0, 98, 1);
+  --first-alpha-color: rgba(217, 0, 98, 0,75);
+  --second-color: rgba(20, 25, 45, 1);
+  --second-alpha-color: rgba(20, 25, 45, 0,75);
+  --third-color: rgba(80, 20, 100, 1);
+  --third-alpha-color: rgba(80, 20, 100, 0,75);
+  --white-color: rgba(255, 255, 255, 1);
+  --gray-light-color: rgba(243, 243, 243, 1);
+  --gray-color: rgba(204, 204, 204, 1);
+  --gray-dark-color: rgba(102, 102, 102, 1);
+  --black-color: rgba(0, 0, 0, 1);
+  --link-color:rgba(80, 158, 227, 1);
+  --title-color: rgba(51, 51, 51, 1);
+  --text-color: rgba(34, 34, 34, 1);
+  --white-alpha-color: rgba(255, 255, 255, 0,5);
+  --black-alpha-color: rgba(0, 0, 0, 0,5);
+  --font: "Raleway", sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/*************** Resest ***************/
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/*************** Components ***************/
+
+/*************** Menu ***************/
+
+.menu{
+  display: none;
+}
+
+
+
+/*************** Utilities ***************/
+.box-shadow-1{
+  box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0,25);
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+
+.none{
+  display: none;
+}
+
+/*************** Site Styles ***************/
+.header{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--second-color);
+  padding: 1rem;
+}
+
+.header > .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
