@@ -1,19 +1,19 @@
 /*************** Custom Properties ***************/
-:root{
-  --first-color: rgba(217, 0, 98, 1);
+:root {
+  --first-color: #d90062;
   --first-alpha-color: rgba(217, 0, 98, 0.75);
-  --second-color: rgba(20, 25, 45, 1);
+  --second-color: #14192d;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
-  --third-color: rgba(80, 20, 100, 1);
+  --third-color: #501464;
   --third-alpha-color: rgba(80, 20, 100, 0.75);
-  --white-color: rgba(255, 255, 255, 1);
-  --gray-light-color: rgba(243, 243, 243, 1);
-  --gray-color: rgba(204, 204, 204, 1);
-  --gray-dark-color: rgba(102, 102, 102, 1);
-  --black-color: rgba(0, 0, 0, 1);
-  --link-color:rgba(80, 158, 227, 1);
-  --title-color: rgba(51, 51, 51, 1);
-  --text-color: rgba(34, 34, 34, 1);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: "Raleway", sans-serif;
@@ -90,6 +90,82 @@ p {
 }
 
 /*************** Components ***************/
+
+/*************** Carousel ***************/
+
+@keyframes carousel-slide {
+  0%{
+    transform: translateX(0%);
+  }
+
+  25%{
+    transform: translateX(-25%);
+  }
+
+  50%{
+    transform: translateX(-50%);
+  }
+
+  75%{
+    transform: translateX(-75%);
+  }
+}
+
+.carousel{
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: var(--carousel-bg-color);
+}
+
+.carousel .slides{
+  padding-left: 0;
+  display: flex;
+  /*100% for each slide*/
+  width: 400%;
+  list-style: none;
+  transition: transform 0.5s ease-in-out;
+  animation: carousel-slide 12s ease-in-out 3s;
+}
+
+.carousel input{
+  display: none;
+}
+
+.carousel label{
+  border: medium solid var(--gray-dark-color);
+  border-radius: 50%;
+  cursor:pointer;
+  margin: 0 0.25rem;
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+#slide-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+
+#slide-3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+
+#slide-4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+
+#slide-1:checked ~ .slides-nav label#dot-1,
+#slide-2:checked ~ .slides-nav label#dot-2,
+#slide-3:checked ~ .slides-nav label#dot-3,
+#slide-4:checked ~ .slides-nav label#dot-4{
+  background-color: var(--gray-dark-color);
+}
 
 /*************** HeroImage ***************/
 
@@ -187,6 +263,45 @@ p {
   }
 }
 
+/*************** Modal ***************/
+
+.modal{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+.modal-content{
+  position: relative;
+}
+
+.modal-close{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg{
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+
+.modal[id|="work"]:target{
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /*************** ProgressBar ***************/
 
 progress{
@@ -219,6 +334,13 @@ progress::-moz-progress-bar{
 }
 
 /*************** Utilities ***************/
+
+.avatar{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
 .box-shadow-1{
   box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0,25);
 }
@@ -261,6 +383,10 @@ progress::-moz-progress-bar{
   padding: 0.5rem 1rem;
   text-align: center;
   color: var(--title-color);
+}
+
+.text-first-color{
+  color: var(--first-color);
 }
 
 .text-center{
@@ -376,6 +502,31 @@ progress::-moz-progress-bar{
   height: 100%;
 }
 
+.portfolio-modal{
+  padding: 1rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
+}
+
+.portfolio-modal h3{
+  border-bottom: medium solid var(--first-color);
+  padding: 0.5rem 0;
+  margin: 1rem auto;
+  color: var(--title-color);
+}
+
+.portfolio-details{
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-auto-rows: 2rem;
+}
+
+.portfolio-details b{
+  color: var(--first-color);
+}
+
 .service-card{
   margin: 1rem auto;
   padding: 1rem;
@@ -392,13 +543,24 @@ progress::-moz-progress-bar{
 }
 
 @media screen and (min-width:768px) {
+
   .portfolio > .container{
     display: grid;
     grid-template-columns: repeat(2,50%);
   }
-  
+
   .portfolio .section-title{
     grid-column: span 2;
+  }
+
+  .portfolio-modal{
+    flex-direction: row;
+    max-width: 800px;
+  }
+
+  .portfolio-info{
+    margin: 1rem;
+    align-self: center;
   }
 
   .services > .container{
