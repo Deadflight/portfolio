@@ -1,11 +1,11 @@
 /*************** Custom Properties ***************/
 :root{
   --first-color: rgba(217, 0, 98, 1);
-  --first-alpha-color: rgba(217, 0, 98, 0,75);
+  --first-alpha-color: rgba(217, 0, 98, 0.75);
   --second-color: rgba(20, 25, 45, 1);
-  --second-alpha-color: rgba(20, 25, 45, 0,75);
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
   --third-color: rgba(80, 20, 100, 1);
-  --third-alpha-color: rgba(80, 20, 100, 0,75);
+  --third-alpha-color: rgba(80, 20, 100, 0.75);
   --white-color: rgba(255, 255, 255, 1);
   --gray-light-color: rgba(243, 243, 243, 1);
   --gray-color: rgba(204, 204, 204, 1);
@@ -14,8 +14,8 @@
   --link-color:rgba(80, 158, 227, 1);
   --title-color: rgba(51, 51, 51, 1);
   --text-color: rgba(34, 34, 34, 1);
-  --white-alpha-color: rgba(255, 255, 255, 0,5);
-  --black-alpha-color: rgba(0, 0, 0, 0,5);
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: "Raleway", sans-serif;
   --max-width: 1200px;
   --header-height: 4rem;
@@ -91,17 +91,148 @@ p {
 
 /*************** Components ***************/
 
-/*************** Menu ***************/
+/*************** HeroImage ***************/
 
-.menu{
-  display: none;
+.hero-image{
+  background-image: var(--hero-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: var(--hero-attachment);
 }
 
+.hero-image-opacity{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);
+}
 
+.hero-image-tittle{
+  font-size: 7vw;
+  color: var(--hero-text-color);
+}
+
+/*************** Menu ***************/
+
+.menu-btn{
+  outline: thin solid var(--first-color);
+  border: 0;
+  background-color: var(--second-color);
+  cursor: pointer;
+}
+
+.menu-btn svg{
+  fill: var(--first-color);
+}
+
+.menu{
+  position: fixed;
+  left: 0;
+  bottom: var(--header-height);
+  width: 100%;
+  background-color: var(--second-color);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.menu.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu a{
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+.menu a:hover{
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+@media screen and (min-width:1024px) {
+  .menu-btn{
+    display: none;
+  }
+
+  .menu{
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    width: auto;
+    flex-direction: row;
+  }
+
+  .menu a{
+    padding: 0 1rem;
+  }
+
+  .menu a:last-child{
+    padding-right: 0;
+  }
+
+  .menu a:hover{
+    background-color: transparent;
+  }
+}
+
+/*************** ProgressBar ***************/
+
+progress{
+  width: 100%;
+  height: 1rem;
+  background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-bar{
+  background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-value{
+  background-color: var(--gray-dark-color);
+}
+
+progress::-moz-progress-bar{
+  background-color: var(--gray-dark-color);
+}
+
+.progress{
+  margin: 1rem auto;
+}
+
+.progress > p{
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
 
 /*************** Utilities ***************/
 .box-shadow-1{
   box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0,25);
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
 }
 
 .container{
@@ -110,11 +241,78 @@ p {
   max-width: var(--max-width);
 }
 
+.gray-scale{
+  filter: grayscale(1);
+}
+
 .none{
   display: none;
 }
 
+.section{
+  padding: 2rem 1rem;
+}
+
+.section-title{
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  width: 250px;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: var(--title-color);
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+@media screen and (min-width: 1024px) {
+  .full-lg-screen{
+    width: 100%;
+    min-height: 100vh;
+  }
+  .text-lg-center{
+    text-align: center;
+  }
+
+  .text-lg-left{
+    text-align: left;
+  }
+
+  .text-lg-right{
+    text-align: right;
+  }
+}
+
+
 /*************** Site Styles ***************/
+
+.bg-gray-light{
+  background-color: var(--gray-light-color);
+}
+
+.about{
+  padding: 4rem 1rem;
+}
+
+.about > article{
+  margin-bottom: 2rem;
+}
+
+.about div{
+  display: flex;
+  justify-content: center;
+}
+
 .header{
   position: fixed;
   left: 0;
@@ -132,5 +330,101 @@ p {
   align-items: center;
 }
 
+.logo a{
+  color: var(--first-color);
+  font-weight: bold;
+  font-size:  2rem;
+  text-decoration: none;
+}
 
+.portfolio-card{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.portfolio-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-card-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--first-alpha-color);
+  color: var(--white-color);
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.portfolio-card:hover .portfolio-card-info{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.portfolio-card-info > div{
+  padding: 1rem;
+  border: thin solid var(--white-color);
+  width: 100%;
+  height: 100%;
+}
+
+.service-card{
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card h3{
+  color: var(--title-color);
+}
+
+.service-card svg{
+  fill: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width:768px) {
+  .services > .container{
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .services .section-title{
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .about {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .header{
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    height: cal(var(--header-height) - 0.5rem);
+  }
+
+  .services > .container{
+    grid-template-columns: repeat(3,30%);
+  }
+
+  .services .section-title{
+    grid-column: span 3;
+  }
+}
 
