@@ -706,6 +706,11 @@ progress::-moz-progress-bar{
     max-width: 800px;
   }
 
+  .portfolio-modal img{
+    width: 100%;
+    max-width: 400px;
+    object-fit:contain;
+  }
   .portfolio-info{
     margin: 1rem;
     align-self: center;
