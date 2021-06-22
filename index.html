@@ -59,7 +59,7 @@
     <article class="text-lg-right">
       <aside class="text-center text-lg-right">
         <h1>Carlos Correa</h1>
-        <h5>Web developer</h5>
+        <h5>Frontend developer</h5>
       </aside>
       <p>
         I am a frontend developer who likes to learn more and more about web development every day where every day is a new learning 
@@ -68,8 +68,8 @@
         I also like to collaborate in projects where the environment is pleasant, professional and everyone collaborates to meet the established goals.
       </p>
       <p>
-         I enjoy carrying out the layout and interactivity of <i> web </i> interfaces, as well as the optimization, for
-         the good positioning and loading performance of <i> web </i> sites and applications. 
+        I enjoy carrying out the layout and interactivity of <i> web </i> interfaces, as well as the optimization, for
+        the good positioning and loading performance of <i> web </i> sites and applications.
       </p>
       <div class="text-center text-lg-left">
         <!--<a href="#" class="btn" target="_blank" rel="noopener"> Descarga mi CV </a>-->
@@ -91,8 +91,22 @@
   <section class="portfolio section" id="portfolio">
     <div class="container">
       <h2 class="section-title">My Works</h2>
+
       <a href="#work-1" class="portfolio-card">
-      <img src="./assets/work1.PNG" alt="Portfolio-1">
+        <img src="./assets/work1.PNG" alt="Portfolio-1">
+        <aside class="portfolio-card-info">
+          <div>
+            <h3>Easybank landing page</h3>
+            <p>
+              This is a solution to the easybank landing page challenge on Frontend Mentor using HTML5, CSS3, Sass, Vanilla JavaScript.
+            </p>
+
+          </div>
+        </aside>
+      </a>
+
+      <a href="#work-2" class="portfolio-card">
+      <img src="./assets/work2.PNG" alt="Portfolio-2">
       <aside class="portfolio-card-info">
         <div>
           <h3>FAQ Accordion Card</h3>
@@ -101,8 +115,9 @@
         </div>
       </aside>
       </a>
-      <a href="#work-2" class="portfolio-card">
-      <img src="./assets/work2.PNG" alt="Portfolio-2">
+
+      <a href="#work-3" class="portfolio-card">
+      <img src="./assets/work3.PNG" alt="Portfolio-3">
       <aside class="portfolio-card-info">
         <div>
           <h3>Calculator</h3>
@@ -112,8 +127,10 @@
         </div>
       </aside>
       </a>
-      <a href="#work-3" class="portfolio-card">
-      <img src="./assets/work3.PNG" alt="Portfolio-3">
+
+      <!--
+      <a href="#work-4" class="portfolio-card">
+      <img src="./assets/work4.PNG" alt="Portfolio-4">
       <aside class="portfolio-card-info">
         <div>
           <h3>3-Column Preview Card</h3>
@@ -121,8 +138,10 @@
         </div>
       </aside>
       </a>
-      <a href="#work-4" class="portfolio-card">
-        <img src="./assets/work4.PNG" alt="Portfolio-4">
+      -->
+
+      <a href="#work-5" class="portfolio-card">
+        <img src="./assets/work5.PNG" alt="Portfolio-5">
         <aside class="portfolio-card-info">
           <div>
             <h3>Single Price grid</h3>
@@ -130,15 +149,42 @@
           </div>
         </aside>
       </a>
+
     </div>
   </section>
+
   <article class="modal" id="work-1">
     <div class="modal-content">
       <a href="#close" class="modal-close">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"/></svg>
       </a>
       <article class="portfolio-modal">
-        <img src="./assets/work1.PNG" alt="Work 1">
+        <img src="./assets/work1.png" alt="Work 1">
+        <div class="portfolio-info">
+          <h3>Easybank landing page</h3>
+          <p>This is a solution to the easybank landing page challenge on Frontend Mentor using HTML5, CSS3, Sass, Vanilla JavaScript.</p>
+          <aside class="portfolio-details">
+            <small><b>Type:</b></small>
+            <small>Landin Page</small>
+
+            <small><b>Repository:</b></small>
+            <small><a href="https://github.com/Deadflight/easybank-landing-page-master" target="_blank" rel="noopener" >Github</a></small>
+
+            <small><b>Link:</b></small>
+            <small><a href="https://deadflight.github.io/easybank-landing-page-master/" target="_blank" rel="noopener" >Website</a></small>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </article>
+
+  <article class="modal" id="work-2">
+    <div class="modal-content">
+      <a href="#close" class="modal-close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"/></svg>
+      </a>
+      <article class="portfolio-modal">
+        <img src="./assets/work2.PNG" alt="Work 2">
         <div class="portfolio-info">
           <h3>FAQ Accordion Card</h3>
           <p>
@@ -161,13 +207,14 @@
       </article>
     </div>
   </article>
-  <article class="modal" id="work-2">
+
+  <article class="modal" id="work-3">
     <div class="modal-content">
       <a href="#close" class="modal-close">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"/></svg>
       </a>
       <article class="portfolio-modal">
-        <img src="./assets/work2.PNG" alt="Work 2">
+        <img src="./assets/work3.PNG" alt="Work 3">
         <div class="portfolio-info">
           <h3>Calculator</h3>
           <p>
@@ -188,13 +235,14 @@
       </article>
     </div>
   </article>
-  <article class="modal" id="work-3">
+
+  <article class="modal" id="work-4">
     <div class="modal-content">
       <a href="#close" class="modal-close">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"/></svg>
       </a>
       <article class="portfolio-modal">
-        <img src="./assets/work3.PNG" alt="Work 3">
+        <img src="./assets/work4.PNG" alt="Work 4">
         <div class="portfolio-info">
           <h3>3-Column Preview Card</h3>
           <p>
@@ -215,13 +263,14 @@
       </article>
     </div>
   </article>
-  <article class="modal" id="work-4">
+
+  <article class="modal" id="work-5">
     <div class="modal-content">
       <a href="#close" class="modal-close">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2C6.486,2,2,6.486,2,12s4.486,10,10,10s10-4.486,10-10S17.514,2,12,2z M16.207,14.793l-1.414,1.414L12,13.414 l-2.793,2.793l-1.414-1.414L10.586,12L7.793,9.207l1.414-1.414L12,10.586l2.793-2.793l1.414,1.414L13.414,12L16.207,14.793z"/></svg>
       </a>
       <article class="portfolio-modal">
-        <img src="./assets/work4.PNG" alt="Work 4">
+        <img src="./assets/work5.PNG" alt="Work 5">
         <div class="portfolio-info">
           <h3>Single Price Grid</h3>
           <p>This is a solution to the single price grid component challenge on Frontend Mentor.</p>
